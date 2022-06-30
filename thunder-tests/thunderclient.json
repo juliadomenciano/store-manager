@@ -1,0 +1,132 @@
+[
+  {
+    "_id": "05aeb323-ae64-4f8f-a483-c6f5cd1e5ed7",
+    "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
+    "containerId": "",
+    "name": "getAll",
+    "url": "localhost:3000/products",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-06-29T19:12:43.757Z",
+    "modified": "2022-06-29T19:13:45.120Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "f60db000-f543-45d1-b984-536b69a5dd8c",
+    "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
+    "containerId": "",
+    "name": "findById",
+    "url": "localhost:3000/products/1",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-06-29T19:13:05.026Z",
+    "modified": "2022-06-29T20:38:28.334Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "c6899c2a-0b5b-468a-a26f-f734bcf150a3",
+    "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
+    "containerId": "",
+    "name": "create",
+    "url": "localhost:3000/products",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2022-06-29T20:15:44.791Z",
+    "modified": "2022-06-30T03:00:12.352Z",
+    "headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"masyuiiuy\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "2a001846-b6c2-4e76-9f9a-56196c3cc37f",
+    "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
+    "containerId": "",
+    "name": "create sale",
+    "url": "localhost:3000/sales",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2022-06-30T02:55:03.215Z",
+    "modified": "2022-06-30T18:45:25.132Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "  [\n    {\n      \"productId\": 2,\n      \"quantity\":0\n    },\n    {\n      \"productId\": 2,\n      \"quantity\":2\n    }\n  ]",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "91b1d00d-1321-48e2-9e8d-275b5e4599cb",
+    "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
+    "containerId": "",
+    "name": "getSales",
+    "url": "localhost:3000/sales/1",
+    "method": "GET",
+    "sortNum": 60000,
+    "created": "2022-06-30T19:30:27.307Z",
+    "modified": "2022-06-30T19:31:34.008Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "cabbd432-e4ab-4ed3-a06d-d87d79cfb64b",
+    "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
+    "containerId": "",
+    "name": "saleById",
+    "url": "",
+    "method": "GET",
+    "sortNum": 70000,
+    "created": "2022-06-30T19:30:41.682Z",
+    "modified": "2022-06-30T19:30:41.682Z",
+    "headers": []
+  },
+  {
+    "_id": "4630791d-b8c6-49e4-b85a-5f22683edd0d",
+    "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
+    "containerId": "",
+    "name": "updateProduct",
+    "url": "localhost:3000/products/1",
+    "method": "PUT",
+    "sortNum": 80000,
+    "created": "2022-06-30T23:01:52.173Z",
+    "modified": "2022-06-30T23:12:16.633Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "  {\n    \"name\": \"Martelo do Batman\"\n  }",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "5c612096-ada3-428d-8e38-dd9ceaa83478",
+    "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
+    "containerId": "",
+    "name": "removeProduct",
+    "url": "localhost:3000/products/1",
+    "method": "DELETE",
+    "sortNum": 90000,
+    "created": "2022-06-30T23:20:15.939Z",
+    "modified": "2022-06-30T23:35:09.022Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
