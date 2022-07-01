@@ -43,9 +43,17 @@ const findById = async (data) => {
   return { message: result, code: 200 };
 };
 
+const remove = async (data) => {
+  const validateId = await salesModel.findById(data);
+  if (!validateId.length) return { message: { message: 'sale not found' }, code: 404 };
+  await salesModel.remove(data);
+  return 204;
+};
+
 module.exports = {
   create,
   getAll,
   findById,
+  remove,
 
 };

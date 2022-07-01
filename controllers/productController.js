@@ -30,11 +30,19 @@ const remove = async (req, res) => {
   res.status(result.code).json(result.message);
 };
 
+const searchTerm = async (req, res) => {
+  const { q } = req.query;
+  console.log(q);
+  const result = await productService.searchTerm(q);
+  res.status(result.code).json(result.message);
+};
+
 module.exports = {
   getAll,
   findById,
   create,
   update,
   remove,
+  searchTerm,
   
 };

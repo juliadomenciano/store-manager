@@ -32,11 +32,19 @@ const remove = async (data) => {
   await connection.execute(query, [data]);
 };
 
+const searchTerm = async (data) => {
+  const formatData = `%${data}%`;
+  const query = 'SELECT * FROM StoreManager.products WHERE name LIKE ?';
+  const [result] = await connection.execute(query, [formatData]);
+  return result;
+};
+
 module.exports = {
   getAll,
   findById,
   create,
   update,
   remove,
+  searchTerm,
   
 };

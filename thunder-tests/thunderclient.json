@@ -36,7 +36,7 @@
     "method": "POST",
     "sortNum": 40000,
     "created": "2022-06-29T20:15:44.791Z",
-    "modified": "2022-06-30T03:00:12.352Z",
+    "modified": "2022-07-01T00:12:53.470Z",
     "headers": [
       {
         "name": "Content-Type",
@@ -46,7 +46,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"name\": \"masyuiiuy\"\n}",
+      "raw": "{\n    \"name\": \"Produto1\"\n}",
       "form": []
     },
     "tests": []
@@ -75,11 +75,11 @@
     "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
     "containerId": "",
     "name": "getSales",
-    "url": "localhost:3000/sales/1",
+    "url": "localhost:3000/sales",
     "method": "GET",
     "sortNum": 60000,
     "created": "2022-06-30T19:30:27.307Z",
-    "modified": "2022-06-30T19:31:34.008Z",
+    "modified": "2022-07-01T00:44:41.720Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -89,12 +89,14 @@
     "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
     "containerId": "",
     "name": "saleById",
-    "url": "",
+    "url": "localhost:3000/sales/1",
     "method": "GET",
     "sortNum": 70000,
     "created": "2022-06-30T19:30:41.682Z",
-    "modified": "2022-06-30T19:30:41.682Z",
-    "headers": []
+    "modified": "2022-07-01T00:43:58.442Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   },
   {
     "_id": "4630791d-b8c6-49e4-b85a-5f22683edd0d",
@@ -127,6 +129,40 @@
     "modified": "2022-06-30T23:35:09.022Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "d7704c0f-28ae-49bc-89eb-6aa073a8307a",
+    "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
+    "containerId": "",
+    "name": "removeSale",
+    "url": "localhost:3000/sales/1",
+    "method": "DELETE",
+    "sortNum": 100000,
+    "created": "2022-07-01T00:42:59.097Z",
+    "modified": "2022-07-01T00:44:19.963Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "3b430cc0-e54a-42ea-bab3-73fc86021ba9",
+    "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
+    "containerId": "",
+    "name": "searchQuery",
+    "url": "localhost:3000/products/search?q=ra",
+    "method": "GET",
+    "sortNum": 110000,
+    "created": "2022-07-01T01:33:25.837Z",
+    "modified": "2022-07-01T02:19:27.174Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "ra",
+        "isPath": false
+      }
+    ],
     "tests": []
   }
 ]

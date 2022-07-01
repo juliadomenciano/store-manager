@@ -16,8 +16,16 @@ const create = async (req, res) => {
   res.status(result.code).json(result.message);
 };
 
+const remove = async (req, res) => {
+  const { id } = req.params;
+  const result = await salesService.remove(id);
+  if (result === 204) return res.status(204).send();
+  res.status(result.code).json(result.message);
+};
+
 module.exports = {
   create,
   getAll,
   findById,
+  remove,
 };

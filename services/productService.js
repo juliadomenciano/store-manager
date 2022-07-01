@@ -32,10 +32,10 @@ const create = async (data) => {
   // const validation = productValidation(data);
   // if (validation !== {}) return { message: validation.message, code: validation.code };
   if (!data.name) return { message: { message: '"name" is required' }, code: 400 };
-  if (!data.name.length < 5) {
+  if (data.name.length < 5) {
  return {
     message: { message: '"name" length must be at least 5 characters long' },
-    code: 400,
+    code: 422,
   }; 
 }
   const result = await productModel.create(data.name);
@@ -57,10 +57,20 @@ const remove = async (data) => {
   return 204;
 };
 
+const searchTerm = async (data) => {
+  const result = await productModel.searchTerm(data);
+  if (!result.length) {
+    const getAllResults = await productModel.getAll();
+    return { message: getAllResults, code: 200 };
+  }
+  return { message: result, code: 200 };
+};
+
 module.exports = {
   getAll,
   findById,
   create,
   update,
   remove,
+  searchTerm,
 };

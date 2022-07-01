@@ -1,4 +1,5 @@
 const connection = require('./connection');
+// const sales_productsModel = require('./salesProductsModel');
 
 const getAll = async () => {
   const query = `SELECT p.sale_id, s.date, p.quantity,
@@ -26,8 +27,14 @@ const create = async (data) => {
   await connection.execute(query, [data]);
 };
 
+const remove = async (data) => {
+  const query = 'DELETE FROM StoreManager.sales WHERE id = ?';
+  await connection.execute(query, [data]);
+};
+
 module.exports = {
   getAll,
   create,
   findById,
+  remove,
 };
