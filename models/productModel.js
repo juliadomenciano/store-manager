@@ -17,6 +17,7 @@ const create = async (data) => {
   const query2 = 'SELECT * FROM StoreManager.products WHERE name=?';
   await connection.execute(query, [data]);
   const [result] = await connection.execute(query2, [data]);
+  console.log(result);
   return result;
 };
 

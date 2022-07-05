@@ -1,5 +1,4 @@
 const connection = require('./connection');
-// const sales_productsModel = require('./salesProductsModel');
 
 const formatResult = (data) => data.map((item) => ({
     saleId: item.sale_id,

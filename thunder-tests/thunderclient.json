@@ -107,12 +107,12 @@
     "method": "PUT",
     "sortNum": 80000,
     "created": "2022-06-30T23:01:52.173Z",
-    "modified": "2022-06-30T23:12:16.633Z",
+    "modified": "2022-07-05T21:45:58.675Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "  {\n    \"name\": \"Martelo do Batman\"\n  }",
+      "raw": "  {\n    \"age\": \"\"\n  }",
       "form": []
     },
     "tests": []
@@ -150,16 +150,16 @@
     "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
     "containerId": "",
     "name": "searchQuery",
-    "url": "localhost:3000/products/search?q=ra",
+    "url": "localhost:3000/products/search?q=martelo",
     "method": "GET",
     "sortNum": 110000,
     "created": "2022-07-01T01:33:25.837Z",
-    "modified": "2022-07-01T02:19:27.174Z",
+    "modified": "2022-07-05T18:20:34.744Z",
     "headers": [],
     "params": [
       {
         "name": "q",
-        "value": "ra",
+        "value": "martelo",
         "isPath": false
       }
     ],
