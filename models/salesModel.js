@@ -1,6 +1,19 @@
 const connection = require('./connection');
 // const sales_productsModel = require('./salesProductsModel');
 
+const formatResult = (data) => data.map((item) => ({
+    saleId: item.sale_id,
+    date: item.date,
+    quantity: item.quantity,
+    productId: item.product_id,
+}));
+  
+const formatResultById = (data) => data.map((item) => ({
+    date: item.date,
+    quantity: item.quantity,
+    productId: item.product_id,
+  }));
+
 const getAll = async () => {
   const query = `SELECT p.sale_id, s.date, p.quantity,
   p.product_id FROM StoreManager.sales_products AS p
@@ -8,7 +21,8 @@ const getAll = async () => {
   ON p.sale_id = s.id
   ORDER BY p.sale_id, p.product_id;`;
   const [result] = await connection.execute(query);
-  return result;
+  const formatedResult = formatResult(result);
+  return formatedResult;
 };
 
 const findById = async (data) => {
@@ -19,7 +33,8 @@ const findById = async (data) => {
   WHERE s.id = ?
   ORDER BY p.sale_id, p.product_id;`;
   const [result] = await connection.execute(query, [data]);
-  return result;
+  const formatedResult = formatResultById(result);
+  return formatedResult;
 };
 
 const create = async (data) => {
