@@ -1,16 +1,11 @@
-// module.exports = (err, req, res, _next) => {
+module.exports = (err, req, res, _next) => {
+   const { name, message } = err;
 
-//   if (err.isJoi) {
-//     return res.status(400)
-//       .json({ error: { message: err.details[0].message } });
-//   }
+  if (err.message.includes('greater')) {
+ return res.status(422).json({ message: '"quantity" must be greater than or equal to 1' }); 
+}
+  if (err.message.includes('required')) return res.status(400).json({ message: err.message });
 
-//   const statusByErrorCode = {
-//     notFound: 404,
-//     alreadyExists: 409,
-//   };
-
-//   const status = statusByErrorCode[err.code] || 500;
-
-//   res.status(status).json({ error: { message: err.message } });
-// };
+    if (name) return res.status(404).json({ message });
+  // next();
+};

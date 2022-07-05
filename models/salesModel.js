@@ -32,9 +32,16 @@ const remove = async (data) => {
   await connection.execute(query, [data]);
 };
 
+const list = async () => {
+  const query = 'SELECT * FROM StoreManager.sales';
+  const [result] = await connection.execute(query);
+  return result;
+};
+
 module.exports = {
   getAll,
   create,
   findById,
   remove,
+  list,
 };
