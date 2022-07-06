@@ -1,5 +1,7 @@
 const productModel = require('../models/productModel');
 
+const tooLong = '"name" length must be at least 5 characters long';
+
 const getAll = async () => {
   const result = await productModel.getAll();
   if (!result.length) return { message: { message: 'Product not found' }, code: 404 };
@@ -14,12 +16,7 @@ const findById = async (data) => {
 
 const create = async (data) => {
   if (!data.name) return { message: { message: '"name" is required' }, code: 400 };
-  if (data.name.length < 5) {
- return {
-    message: { message: '"name" length must be at least 5 characters long' },
-    code: 422,
-  }; 
-}
+  if (data.name.length < 5) return { message: { message: tooLong }, code: 422 };
   const result = await productModel.create(data.name);
   return { message: result[0], code: 201 };
 };
@@ -27,12 +24,7 @@ const create = async (data) => {
 const update = async (data) => {
   const { id, name } = data;
   if (!name) return { message: { message: '"name" is required' }, code: 400 };
-   if (data.name.length < 5) {
- return {
-    message: { message: '"name" length must be at least 5 characters long' },
-    code: 422,
-  }; 
-}
+  if (data.name.length < 5) return { message: { message: tooLong }, code: 422 }; 
   const validateId = await productModel.findById(id);
   if (!validateId.length) return { message: { message: 'Product not found' }, code: 404 };
   await productModel.update(data);

@@ -22,7 +22,7 @@ const id = 1;
 const wrongId = 25;
 const productById = { "id": 1, "name": "Martelo de Thor" };
 const addProduct = { "name": "Produto1" };
-const updateProduct = { "name": "Martelo do Batman" };
+const updateProduct = { "name": "Martelo de Thor" };
 const term = 'martelo';
 
 describe('productModel', () => {

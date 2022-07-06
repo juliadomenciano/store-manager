@@ -22,6 +22,7 @@ const getresults = [
   }
 ];
 
+const getresultsById = [{ "id": 1, "name": "Martelo de Thor" }];
 const resReturned = {
   message: [
     { id: 1, name: 'Martelo de Thor' },
@@ -31,12 +32,18 @@ const resReturned = {
   code: 200
 };
 
-const modelReturn = [{ id: 4, name: 'Produto1' }] 
-const created = { message: modelReturn[0], code: 201 }
+const modelReturn = [{ id: 4, name: 'Produto1' }]; 
+const created = { message: modelReturn[0], code: 201 };
+const byId = { message: getresultsById[0], code: 200 };
+const updatedb = { id: 1, name: 'Martelo de Thor' };
+const getByName = [{ id: 1, name: 'Martelo de Thor' }];
+const update = { message: updatedb, code: 200 };
+const searchByName = { message: getByName, code: 200 };
+// const searchByWrongName = { message: getresults, code: 200 };
 
 
 
-describe.only('productServices', () => {
+describe('productServices', () => {
 
   describe('#getAll', () => {
     beforeEach(() => {
@@ -58,8 +65,6 @@ describe.only('productServices', () => {
     it('verifica se retorna a mensagem e o código corretamente', async () => {
       sinon.stub(productsModel, 'create').resolves(modelReturn);
       const result = await productService.create({ name: 'Martelo de Thor' });
-      console.log(result)
-      console.log(created)
       return expect(result).to.eql(created)
     });
    });
@@ -70,12 +75,54 @@ describe.only('productServices', () => {
     });
 
     it('verifica se retorna a mensagem e o código corretamente', async () => {
-      sinon.stub(productsModel, 'findById').resolves(modelReturn);
+      sinon.stub(productsModel, 'findById').resolves(getresultsById);
       const result = await productService.findById({ name: 'Martelo de Thor' });
-      console.log(result)
-      console.log(created)
-      return expect(result).to.eql(created)
+      return expect(result).to.eql(byId)
     });
+  });
+
+   describe('#update', () => {
+    beforeEach(() => {
+      sinon.restore()
+    });
+
+    it('verifica se retorna a mensagem e o código corretamente', async () => {
+      sinon.stub(productsModel, 'update').resolves();
+      const result = await productService.update({ id: 1, name: 'Martelo de Thor' });
+      return expect(result).to.eql(update)
+    });
+   });
+  
+  describe('#remove', () => {
+    beforeEach(() => {
+      sinon.restore()
+    });
+
+    it('verifica se retorna a mensagem e o código corretamente', async () => {
+      sinon.stub(productsModel, 'remove').resolves();
+      const result = await productService.remove(1);
+      return expect(result).to.eql(204)
+    });
+  });
+
+  describe('#searchTerm', () => {
+    beforeEach(() => {
+      sinon.restore()
+    });
+
+    it('verifica se retorna a mensagem e o código corretamente', async () => {
+      sinon.stub(productsModel, 'searchTerm').resolves(getByName);
+      const result = await productService.searchTerm('Martelo');
+      return expect(result).to.eql(searchByName)
+    });
+
+    // it('verifica se retorna a mensagem de erro corretamente', async () => {
+    //   sinon.stub(productsModel, 'searchTerm').resolves(getresults);
+    //   const result = await productService.searchTerm('xyz');
+    //   return expect(result).to.eql(searchByWrongName)
+    // });
+    
+
   });
 
 });
