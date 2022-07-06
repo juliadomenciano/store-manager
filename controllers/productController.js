@@ -33,7 +33,6 @@ const remove = async (req, res) => {
 
 const searchTerm = async (req, res) => {
   const { q } = req.query;
-  console.log(q);
   const result = await productService.searchTerm(q);
   return res.status(result.code).json(result.message);
 };

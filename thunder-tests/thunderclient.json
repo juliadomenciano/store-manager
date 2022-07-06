@@ -122,11 +122,11 @@
     "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
     "containerId": "",
     "name": "removeProduct",
-    "url": "localhost:3000/products/1",
+    "url": "localhost:3000/products/2",
     "method": "DELETE",
     "sortNum": 90000,
     "created": "2022-06-30T23:20:15.939Z",
-    "modified": "2022-06-30T23:35:09.022Z",
+    "modified": "2022-07-06T19:47:36.867Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -150,16 +150,16 @@
     "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
     "containerId": "",
     "name": "searchQuery",
-    "url": "localhost:3000/products/search?q=Martelo",
+    "url": "localhost:3000/products/search?q",
     "method": "GET",
     "sortNum": 110000,
     "created": "2022-07-01T01:33:25.837Z",
-    "modified": "2022-07-05T22:27:44.724Z",
+    "modified": "2022-07-06T20:35:42.213Z",
     "headers": [],
     "params": [
       {
         "name": "q",
-        "value": "Martelo",
+        "value": "",
         "isPath": false
       }
     ],
