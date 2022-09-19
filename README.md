@@ -8,9 +8,9 @@
 
   The user, regardless of registration, can:
 
-    - Add, read, delete and update products;
-    - Send sales to the system and these sales must validate if the product in question exists;
-    - Read, delete and update sales.
+  * Add, read, delete and update products;
+  * Send sales to the system and these sales must validate if the product in question exists;
+  * Read, delete and update sales.
 
   
   ## Tools
@@ -49,9 +49,9 @@
 
   A pessoa usuária, independente de cadastro, consegue:
 
-    - Adicionar, ler, deletar e atualizar produtos;
-    - Enviar vendas para o sistema e essas vendas devem validar se o produto em questão existe;
-    - Ler, deletar e atualizar vendas.
+  * Adicionar, ler, deletar e atualizar produtos;
+  * Enviar vendas para o sistema e essas vendas devem validar se o produto em questão existe;
+  * Ler, deletar e atualizar vendas.
 
   
   ## Ferramentas
