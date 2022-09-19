@@ -15,10 +15,8 @@ const salesService = {
 
   create: async (data) => {
     const arrayOfId = data.map((item) => item.productId);
-      console.log(arrayOfId);
     const result = await productModel.getAll();
     const matchIds = result.map((item) => item.id);
-console.log(matchIds);
     arrayOfId.forEach((item) => {
       if (!matchIds.includes(item)) {
         throw new Error('Product not found');
@@ -48,6 +46,12 @@ console.log(matchIds);
     if (!validateId.length) return { message: { message: 'Sale not found' }, code: 404 };
     await salesModel.remove(data);
     return 204;
+  },
+
+  update: async (id, data) => {
+    await Promise.all(data.map((item) => salesProductsModel.update(id, item)));
+    console.log('passou');
+    return { message: { salesId: id, itemsUpdated: data }, code: 200 };
   },
   
 };

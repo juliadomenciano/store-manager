@@ -164,5 +164,24 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "84be0f42-429d-4b09-ab7e-ce70a0481c3b",
+    "colId": "d963906a-2b43-4769-a37d-56a6c9419851",
+    "containerId": "",
+    "name": "updateSale",
+    "url": "localhost:3000/sales/1",
+    "method": "PUT",
+    "sortNum": 120000,
+    "created": "2022-07-13T13:00:08.984Z",
+    "modified": "2022-07-13T13:58:35.655Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "  [\n    {\n      \"productId\": 1,\n      \"quantity\":10\n    },\n    {\n      \"productId\": 2,\n      \"quantity\":50\n    }\n  ]",
+      "form": []
+    },
+    "tests": []
   }
 ]

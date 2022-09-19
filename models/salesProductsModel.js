@@ -7,14 +7,16 @@ const create = async (data) => {
   await connection.execute(query, [salesId, productId, quantity]);
 };
 
-// const update = async (data) => {
-//   const { id, productId, quantity } = data;
-//   const query = 'UPDATE StoreManager.sales_products SET product_id = ?, quantity = ? WHERE id = ?';
-//   const [result] = await connection.execute(query, [productId, quantity, id]);
-//   return result;
-// };
+const update = async (id, data) => {
+  console.log(data);
+  const { productId, quantity } = data;
+  const query = `UPDATE StoreManager.sales_products
+  SET product_id = ?, quantity = ? WHERE sale_id = ?`;
+  await connection.execute(query, [productId, quantity, id]);
+  console.log(id);
+};
 
 module.exports = {
   create,
-  // update,
+  update,
 };
